@@ -1,5 +1,6 @@
 import { first151Pokemon, getFullPokedexNumber } from '../utils'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function SideNav(props) {
     const { selectedPokemon, setSelectedPokemon, showSideMenu, handleCloseMenu } = props
@@ -25,6 +26,9 @@ export default function SideNav(props) {
                 <i className="fa-solid fa-arrow-left-long"></i>
                 </button>
                 <h1 className='text-gradient'>Pokédex</h1>
+                <Link to="/compare" className="nav-card">
+                    <p>Compare Pokémon</p>
+                </Link>
             </div>
             <input  placeholder='001 or Bulb...' value={searchValue} onChange={(e) => {
                 setSearchValue(e.target.value)

@@ -2,6 +2,8 @@ import Header from './components/Header'
 import SideNav from './components/SideNav'
 import PokeCard from './components/PokeCard'
 import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import CompareView from './components/CompareView'
 
 function App() {
   const [selectedPokemon, setSelectedPokemon] = useState(0)
@@ -16,7 +18,7 @@ function App() {
   }
 
   return (
-    <>
+    <BrowserRouter>
       <Header handleToggleMenu={handleToggleMenu} />
       <SideNav
         selectedPokemon={selectedPokemon}
@@ -24,8 +26,11 @@ function App() {
         handleCloseMenu={handleCloseMenu}
         showSideMenu={showSideMenu}
       />
-      <PokeCard selectedPokemon={selectedPokemon} />
-    </>
+      <Routes>
+        <Route path="/" element={<PokeCard selectedPokemon={selectedPokemon} />} />
+        <Route path="/compare" element={<CompareView />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

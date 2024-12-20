@@ -239,6 +239,37 @@ h3 {
 
 }
 
+.compare-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.compare-selectors {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.compare-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns side by side */
+  gap: 20px; /* Space between the cards */
+}
+
+@media (max-width: 768px) {
+  .compare-cards {
+    grid-template-columns: 1fr 1fr; /* Keep the side-by-side layout */
+    gap: 10px; /* Reduce the gap for smaller screens */
+  }
+  
+  .compare-container {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+}
+
+
+
 @media (min-width: 640px) {
   #root {
     flex-direction: row;
